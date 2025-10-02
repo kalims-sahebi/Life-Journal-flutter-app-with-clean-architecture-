@@ -37,6 +37,7 @@ dependencies:
   flutter_riverpod: ^2.6.1
   image_picker: ^1.2.0
   dropdown_button2: ^2.3.9
+  geolocator: ^14.0.2
 
 dev_dependencies:
   flutter_test:
