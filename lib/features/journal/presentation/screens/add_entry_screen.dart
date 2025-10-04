@@ -50,6 +50,7 @@ class _AddEntryScreenState extends ConsumerState<AddEntryScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Location services are disabled.")),
       );
@@ -60,6 +61,7 @@ class _AddEntryScreenState extends ConsumerState<AddEntryScreen> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Location permissions are denied.")),
         );
@@ -68,6 +70,7 @@ class _AddEntryScreenState extends ConsumerState<AddEntryScreen> {
     }
 
     if (permission == LocationPermission.deniedForever) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Location permanently denied.")),
       );
@@ -75,6 +78,7 @@ class _AddEntryScreenState extends ConsumerState<AddEntryScreen> {
     }
 
     final position = await Geolocator.getCurrentPosition(
+      // ignore: deprecated_member_use
       desiredAccuracy: LocationAccuracy.high,
     );
     setState(() => _pickedLocation = position);

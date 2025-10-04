@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:myproject/features/journal/domain/entities/journal_entry.dart';
 
 // StateNotifier: manages a list of entries

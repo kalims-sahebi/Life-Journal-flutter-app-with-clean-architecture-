@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../state/theme_provider.dart';
 import '../state/journal_provider.dart';
 
@@ -17,8 +18,8 @@ class HomeScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
-            onPressed: () {
-              ref.read(themeProvider.notifier).state = !isDark;
+            onPressed: () async {
+              await ref.read(themeProvider.notifier).toggleTheme();
             },
           ),
         ],
