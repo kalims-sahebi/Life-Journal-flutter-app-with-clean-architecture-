@@ -2,10 +2,13 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myproject/features/journal/domain/entities/journal_entry.dart';
+import 'package:uuid/uuid.dart';
 import '../state/journal_provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:geolocator/geolocator.dart';
+
+final uuid = Uuid(); // create a Uuid instance
 
 class AddEntryScreen extends ConsumerStatefulWidget {
   const AddEntryScreen({super.key});
@@ -94,8 +97,10 @@ class _AddEntryScreenState extends ConsumerState<AddEntryScreen> {
 
     final title = _titleController.text.trim();
     final content = _contentController.text.trim();
+    final newId = uuid.v4(); // generate a new unique id
 
     final newEntry = JournalEntry(
+      id: newId,
       title: title,
       content: content,
       date: _selectedDate!,

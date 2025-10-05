@@ -9,7 +9,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = ref.watch(themeProvider);
-    final entries = ref.watch(journalProvider); // <-- our real state
+    final entries = ref.watch(journalProvider); // Hive-backed state
 
     return Scaffold(
       appBar: AppBar(
