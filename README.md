@@ -1,16 +1,19 @@
-# myproject
+# flutter app with clean architecture
 
-A new Flutter project.
+Life journal
 
-## Getting Started
+## The following Features covered
 
-This project is a starting point for a Flutter application.
+State Management: Riverpod
 
-A few resources to get you started if this is your first Flutter project:
+Local Storage: Hive, SharedPreferences, SQLite
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+UI & Design: Custom light/dark theme, custom colors & extensions, custom app icon, dark/light splash screen
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Forms: Input forms with data validation
+
+Responsive Design: Adaptive interfaces for portrait & landscape modes
+
+Device Integration: Camera, GPS, and other native features
+
+Networking: API integration, backend connection, HTTP requests
